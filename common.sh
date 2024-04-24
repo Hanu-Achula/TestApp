@@ -9,7 +9,10 @@
 
 # Declaring variables
 USERID=$(id -u)
+SCRIPT_NAME=$(echo $0 | awk -F "." '{print $1}')
+TIMESTAMP=$(date +%F-%H-%M-%S)
 
+LOGFILE="/tmp/$SCRIPT_NAME-$TIMESTAMP.log"
 # Declaring functions
 check_root() 
 {
@@ -23,14 +26,14 @@ check_root()
     fi
 }
 
-VALIDATE()
+validate()
 {
     if [ $1 -ne 0 ]
     then
-    echo "$2....FAILURE"
+    echo "$2....FAILURE..CHECKLOG...$3"
     exit 1
     else
-    echo "$2....SUCCESS"
+    echo "$2....SUCCESS..CHECKLOG...$3"
     fi
 }
 
