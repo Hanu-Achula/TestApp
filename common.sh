@@ -22,7 +22,7 @@ check_root()
     exit 1
     else
     echo "Admin,proceed"
-    exit 0
+    #exit 0
     fi
 }
 
