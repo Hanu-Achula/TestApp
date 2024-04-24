@@ -16,8 +16,22 @@ check_root()
     if [ $USERID -ne 0 ]
     then 
     echo "Please run script with admin"
+    exit 1
     else
     echo "Admin,proceed"
+    exit 0
     fi
 }
-check_root
+
+VALIDATE()
+{
+    if [ $1 -ne 0 ]
+    then
+    echo "$2....FAILURE"
+    exit 1
+    else
+    echo "$2....SUCCESS"
+    fi
+}
+
+
