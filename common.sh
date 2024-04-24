@@ -8,7 +8,7 @@
 #########################################
 
 # Declaring variables
-USERID=$(id -u);
+USERID=$(id -u)
 
 # Declaring functions
 check_root() 
@@ -20,3 +20,4 @@ check_root()
     echo "Admin,proceed"
     fi
 }
+check_root
